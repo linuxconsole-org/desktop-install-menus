@@ -3,3 +3,4 @@
 		echo "Send $file"
 		echo "put $file" | ncftp  opkg
 	done
+	echo "put desktop-install-menus.sh" | ncftp  opkg

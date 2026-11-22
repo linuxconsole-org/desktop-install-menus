@@ -2,7 +2,7 @@
 set -e
 
 FREEMEG=$(free -m |grep Mem |  gawk '{print $7}')
-if [ "$FREEMEG" -gt "4000" ]
+if [ "$FREEMEG" -gt "4000" ] && [ ! -e /media/ydfs/ydfs.cfg ]
 then
   echo "Free mem : $FREEMEG, OK"
 else
