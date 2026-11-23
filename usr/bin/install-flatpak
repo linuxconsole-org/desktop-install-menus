@@ -2,10 +2,11 @@
 set -e
 
 FREEMEG=$(free -m |grep Mem |  gawk '{print $7}')
-if [ "$FREEMEG" -gt "4000" ] && [ ! -e /media/ydfs/ydfs.cfg ]
+#if [ "$FREEMEG" -gt "4000" ] && [ ! -e /media/ydfs/ydfs.cfg ]
+if [ ! "$FREEMEG" -gt "4000" ] && [ ! -e /media/ydfs/ydfs.cfg ] && [ ! -e /disk/flatpak.loop ]
 then
-  echo "Free mem : $FREEMEG, OK"
-else
+#  echo "Free mem : $FREEMEG, OK"
+#else
   echo "$FREEMEG Mb is not enough free memory, please visit https://github.com/linuxconsole-org/ydfs2/blob/2.12/TIPS.md"
   read key
   exit 1
