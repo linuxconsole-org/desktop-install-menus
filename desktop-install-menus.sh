@@ -21,6 +21,11 @@ do
   chmod +x $dirname/$basename
 done
 
-[ ! -e /root/local/.share/applications/opkg.desktop ] && install -d /root/.local/share/applications && wget -q https://opkg.linuxconsole.org/linuxconsole/2.12/usr/share/applications/opkg.desktop -O /root/.local/share/applications/opkg.desktop && cp /root/.local/share/applications/opkg.desktop /root/Desktop
+[ ! -e /root/local/.share/applications/opkg.desktop ] && install -d /root/.local/share/applications && wget -q https://opkg.linuxconsole.org/linuxconsole/2.12/usr/share/applications/opkg.desktop -O /root/.local/share/applications/opkg.desktop && cp /root/.local/share/applications/opkg.desktop /root/Desktop && cp /usr/share/applications/install-* /root/Desktop
+
+# WTF ??
+
+touch /root/Desktop/*.desktop
+touch /usr/share/applications/*.desktop
 
 echo
